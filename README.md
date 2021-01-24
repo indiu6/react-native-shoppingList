@@ -2,7 +2,7 @@
 
 Practice RN
 
-### uuid for RN
+## uuid for RN
 
 ```javascript
 import 'react-native-get-random-values';
