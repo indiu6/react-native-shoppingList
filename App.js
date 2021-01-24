@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Image, FlatList} from 'react-native';
+import {View, StyleSheet, Image, FlatList, Alert} from 'react-native';
 import Header from './components/Header';
 import 'react-native-get-random-values';
 import {v4 as uuidv4} from 'uuid';
@@ -19,7 +19,11 @@ const App = () => {
   };
 
   const addItem = (text) => {
-    setItems((prevItems) => [{id: uuidv4(), text}, ...prevItems]);
+    if (!text) {
+      Alert.alert('Error', 'Please enter an item');
+    } else {
+      setItems((prevItems) => [{id: uuidv4(), text}, ...prevItems]);
+    }
   };
 
   return (
